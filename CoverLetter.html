@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">  
+        <style>
+
+            html {
+                -ms-overflow-style: -ms-autohiding-scrollbar;
+            }
+
+            body {
+                font-family: 'Raleway', sans-serif;
+                height: 842px;
+                width: 700px;
+                /* to centre page on screen*/
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @page {
+                size: letter;
+            }
+
+            .page {
+                display: grid;
+                grid-template-rows: 100px calc(842px - 100px);  /* height limitation on second row */
+                grid-template-columns: auto;
+                grid-template-areas: "header" 
+                                    "content";
+            }
+
+            .sidebar {
+                grid-area: sidebar;
+                border-right-color: black;
+                border-right-style: solid;
+                border-right-width: thin;
+                overflow: visible;
+            }
+
+            .header {
+                text-align: center;
+                grid-area: header;
+                border-bottom-color: black;
+                border-bottom-style: solid;
+                border-bottom-width: medium;
+            }
+
+            .name {
+                font-size: 28pt;
+                font-weight: semi-bold;
+                letter-spacing: 3px;
+                display: block;
+
+                margin: 0;
+            }
+            .contact {
+                display: block;
+                padding-bottom: 10px;
+                margin:0;
+            }
+
+            .text {
+                font-size: 10pt;
+            }
+
+            .contact a:link{
+                text-decoration: none;
+            }
+
+            img {
+                vertical-align: middle;
+                padding-right: 5px;
+                height: auto;
+                width: 20pt;
+            }
+
+            .email, .phone, .linkedin{
+                display: inline-block;
+                padding-left:10px;
+                padding-right:0px;
+                vertical-align: middle;
+            }
+            
+            .linkedin .text, .phone .text, .email .text {
+                padding-top: 5px;
+                vertical-align: middle;
+                visibility: visible;
+                display: inline-block;
+            }
+
+            .li-icon {
+                width: 25pt;
+                height: auto;
+            }
+
+            .content {
+                grid-area: content;
+                overflow:visible;                        /* overflow condition on parent */
+            }
+
+           
+            p {
+                font-size: 10pt;
+                margin-top: 10px;
+            }
+            
+            .salutation {
+                text-align: left;
+            }
+            @media print {
+    footer {page-break-after: always;}
+}
+
+        </style>
+        <script language="javascript" type="text/javascript">
+            function printDiv(divID) 
+            {
+                var divElements = document.getElementById(divID).innerHTML;
+                var oldPage = document.body.innerHTML;
+     
+                document.body.innerHTML = 
+                  "<html><head><title></title></head><body>" + 
+                  divElements + "</body>";
+     
+                window.print();
+     
+                document.body.innerHTML = oldPage;
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div class="page">
+            <div class="header">
+                <div class="name">ADRIANA GUERRA</div>
+                <div class="contact">
+                        <a class="email" href="mailto: adriana.luz.guerra@gmail.com">
+                        <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png" />
+                            <span class="text">adriana.luz.guerra@gmail.com</span>
+                        </a>
+                        <a class="phone" href="tel: 019497638167">
+                            <img src="https://mbtskoudsalg.com/images/phone-vector-png-2.png" />
+                            <span class="text">+1 949 763 8167</span>
+                        </a>
+                        <a class="linkedin" href="https://www.linkedin.com/in/a-l-guerra/">
+                            <img class="li-icon" src="https://cdn2.iconfinder.com/data/icons/neon-line-social-circles-black/100/Neon_Line_Social_Circles_50Icon_10px_grid-25-512.png" />
+                            <span class="text">linkedin.com/in/a-l-guerra</span>
+                        </a>
+                </div>
+            </div>
+            <div class="content">
+            <div class="salutation">
+                <p>
+                    Dear D'Ann Stokes,
+                </p>
+            </div>
+            <div class="text">
+                <p>
+                    I writing to express my interest in applying for the position of Machine Learning and DSP Algorithm Engineer. After working in a variety of fields, I am now looking for a change in careers that will challenge me while allowing me to put the skills that I have aquired to use. My brother, Jorge Guerra, informed me of this opportunity and I believe my experience, education and adaptability would make me a valuable asset at SARA.
+                </p>
+                <p>
+                    My Cognitive Science studies at UC Berkeley included courses in artificial intelligence and computational models of cognition. From this experience, I gained a theoretical as well as a practical understanding of learning algorithms with an emphasis in neural netowrks and weighted nodes. I have also worked with signal processing and noise reduction in my previous research positions, where I worked with EEG, eye-tracking, and motion-tracking data. 
+                </p>
+                <p>
+                    My studies and my work in research provided me with programming fundamentals in MatLab, Scheme, and Python. I have also worked with VBA, VB, C#, ASP.NET, JavaScript, HTML and CSS while working on business and data management tools that I developed with a partner for small to medium sized SCUBA diving centers around the world. We saw a lack of available tools in this industry and took the initiative to develop customized MS Access based programs that allowed these dive centers to manage all aspects of their business through one, easy-to-use interface. This not only gave me experience in programming, but also gave me experience in working with customers to optimize function and design to meet their needs.
+                </p>
+                <p>
+                    I am looking to bring the same drive and propensity for learning that has allowed me to work successfully in a variety of fields to the challenges of machine learning. I am looking forward to hearing from you.
+                </p>
+            </div>
+            <div class="closing">
+                <p>
+                Sincerely,
+                <br>
+                Adriana Guerra
+                </p>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
