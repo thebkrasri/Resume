@@ -1,408 +1,470 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">  
-        <style>
 
-            html {
-                -ms-overflow-style: -ms-autohiding-scrollbar;
-            }
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+        html {
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
 
-            body {
-                font-family: 'Raleway', sans-serif;
-                height: 842px;
-                width: 700px;
-                /* to centre page on screen*/
-                margin-left: auto;
-                margin-right: auto;
-            }
+        body {
+            font-family: 'Raleway', sans-serif;
+            height: 842px;
+            width: 700px;
+            /* to centre page on screen*/
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-            @page {
-                size: letter;
-            }
+        @page {
+            size: letter;
+        }
 
-            .page {
-                display: grid;
-                grid-template-rows: 100px calc(842px - 100px);  /* height limitation on second row */
-                grid-template-columns: 25% auto;
-                grid-template-areas: "header header" 
-                                    "sidebar content"
-                                    "sidebar content";
-            }
+        .page {
+            display: grid;
+            grid-template-rows: 100px calc(842px - 100px);
+            /* height limitation on second row */
+            grid-template-columns: 25% auto;
+            grid-template-areas: "header header"
+                "sidebar content"
+                "sidebar content";
+        }
 
-            .sidebar {
-                grid-area: sidebar;
-                border-right-color: black;
-                border-right-style: solid;
-                border-right-width: thin;
-                overflow: visible;
-            }
+        .sidebar {
+            grid-area: sidebar;
+            border-right-color: black;
+            border-right-style: solid;
+            border-right-width: thin;
+            overflow: visible;
+        }
 
-            .header {
-                text-align: center;
-                grid-area: header;
-                border-bottom-color: black;
-                border-bottom-style: solid;
-                border-bottom-width: medium;
-            }
+        .header {
+            text-align: center;
+            grid-area: header;
+            border-bottom-color: black;
+            border-bottom-style: solid;
+            border-bottom-width: medium;
+        }
 
-            .name {
-                font-size: 28pt;
-                font-weight: semi-bold;
-                letter-spacing: 3px;
-                display: block;
+        .name {
+            font-size: 28pt;
+            font-weight: semi-bold;
+            letter-spacing: 3px;
+            display: block;
 
-                margin: 0;
-            }
-            .contact {
-                display: block;
-                padding-bottom: 10px;
-                margin:0;
-            }
+            margin: 0;
+        }
 
-            .text {
-                font-size: 10pt;
-            }
+        .contact {
+            display: block;
+            padding-bottom: 10px;
+            margin: 0;
+        }
 
-            .contact a:link{
-                text-decoration: none;
-            }
+        .text {
+            font-size: 10pt;
+        }
 
-            img {
-                vertical-align: middle;
-                padding-right: 5px;
-                height: auto;
-                width: 20pt;
-            }
+        .contact a:link {
+            text-decoration: none;
+        }
 
-            .email, .phone, .linkedin{
-                display: inline-block;
-                padding-left:10px;
-                padding-right:0px;
-                vertical-align: middle;
-            }
-            
-            .linkedin .text, .phone .text, .email .text {
-                padding-top: 5px;
-                vertical-align: middle;
-                visibility: visible;
-                display: inline-block;
-            }
+        img {
+            vertical-align: middle;
+            padding-right: 5px;
+            height: auto;
+            width: 20pt;
+        }
 
-            .li-icon {
-                width: 25pt;
-                height: auto;
-            }
+        .email,
+        .phone,
+        .linkedin {
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 0px;
+            vertical-align: middle;
+        }
 
-            .content {
-                grid-area: content;
-                overflow:visible;                        /* overflow condition on parent */
-            }
+        .linkedin .text,
+        .phone .text,
+        .email .text {
+            padding-top: 5px;
+            vertical-align: middle;
+            visibility: visible;
+            display: inline-block;
+        }
 
-            article {
-                height: auto; 
-                text-align: left; 
-                margin: 15px;
-                padding-bottom: 10px;                        /* height set on child; triggers scroll */
-            }
+        .li-icon {
+            width: 25pt;
+            height: auto;
+        }
 
-            hr {
-                padding: 0px;
-                margin: 0px;
-            }
+        .content {
+            grid-area: content;
+            overflow: visible;
+            /* overflow condition on parent */
+        }
 
-            h1 {
-                color:slategrey;
-                font-size: 10pt;
-                font-weight: bold;
-                letter-spacing: 2px;
-                line-height: 1;
-                margin-bottom: 5px;
-            }
+        article {
+            height: auto;
+            text-align: left;
+            margin: 15px;
+            padding-bottom: 10px;
+            /* height set on child; triggers scroll */
+        }
 
-            h2 {
-                font-size: 10pt;
-                font-weight: 800;
-                line-height: 1.6;
-                margin:1px;
-            }
+        hr {
+            padding: 0px;
+            margin: 0px;
+        }
 
-            h3 {
-                font-size: 9pt;
-                font-weight:800;
-                color: lightslategray;
-                line-height: 1.8;
-                margin-top: 0px;
-                margin-bottom: 0px;
-            }
+        h1 {
+            color: slategrey;
+            font-size: 10pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
 
-            p {
-                font-size: 9pt;
-                margin-top: 0;
-            }
+        h2 {
+            font-size: 10pt;
+            font-weight: 800;
+            line-height: 1.6;
+            margin: 1px;
+        }
 
-            .job {
-                padding-left: 5%;
-                padding-top: 10px;
-                line-height: 1.4;
-                padding-top: 0px;
-            }
-            
-            .profile {
-                line-height: 1.4;
-                padding-left: 5%;
-                text-align: left;
-            }
+        h3 {
+            font-size: 9pt;
+            font-weight: 800;
+            color: lightslategray;
+            line-height: 1.8;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
 
-            .full-screen {
-                    display: none;
-                }
+        p {
+            font-size: 9pt;
+            margin-top: 0;
+        }
 
-            ul {
-                line-height: 1.3;
-                padding-left: 15px;
-                margin-top: 0px;
-                list-style-type: disc;
-            }
-            
-            .proficiency {
-                display:none;
-                padding-right: 10px;
-            }
+        .job {
+            padding-left: 5%;
+            padding-top: 10px;
+            line-height: 1.4;
+            padding-top: 0px;
+        }
 
-             .pr {
-                font-size: 10pt;
-                font-style: italic;
-                margin: 0;
-                position: static;
-                display:none;
-            }
+        .profile {
+            line-height: 1.4;
+            padding-left: 5%;
+            text-align: left;
+        }
+
+        .full-screen {
+            display: none;
+        }
+
+        ul {
+            line-height: 1.3;
+            padding-left: 15px;
+            margin-top: 0px;
+            list-style-type: disc;
+        }
+
+        .proficiency {
+            display: none;
+            padding-right: 10px;
+        }
+
+        .pr {
+            font-size: 10pt;
+            font-style: italic;
+            margin: 0;
+            position: static;
+            display: none;
+        }
 
 
-            li {
-                vertical-align: middle;
-                font-size: 10pt;
-            }
+        li {
+            vertical-align: middle;
+            font-size: 10pt;
+        }
 
-            
-            .lang {
-                line-height: 1.3;
-                margin-top: 0px;
-                list-style-type: disc;
-            }
-            .language:before {
-                content:none;
-            }
-            @media print {
-                footer {page-break-after: always;}
-            }
 
-        </style>
-        <script language="javascript" type="text/javascript">
-            function printDiv(divID) 
-            {
-                var divElements = document.getElementById(divID).innerHTML;
-                var oldPage = document.body.innerHTML;
-     
-                document.body.innerHTML = 
-                  "<html><head><title></title></head><body>" + 
-                  divElements + "</body>";
-     
-                window.print();
-     
-                document.body.innerHTML = oldPage;
+        .lang {
+            line-height: 1.3;
+            margin-top: 0px;
+            list-style-type: disc;
+        }
+
+        .language:before {
+            content: none;
+        }
+
+        .w3-container {
+            height: 10px;
+        }
+        @media print {
+            footer {
+                page-break-after: always;
             }
-        </script>
-        
-    </head>
-    <body>
-        <div class="page">
-                <div class="header">
-                    <div class="name">ADRIANA GUERRA</div>
-                    <div class="contact">
-                            <a class="email" href="mailto: adriana.luz.guerra@gmail.com">
-                            <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png" />
-                                <span class="text">adriana.luz.guerra@gmail.com</span>
-                            </a>
-                            <a class="phone" href="tel: 019497638167">
-                                <img src="https://mbtskoudsalg.com/images/phone-vector-png-2.png" />
-                                <span class="text">+1 949 763 8167</span>
-                            </a>
-                            <a class="linkedin" href="https://www.linkedin.com/in/a-l-guerra/">
-                                <img class="li-icon" src="https://cdn2.iconfinder.com/data/icons/neon-line-social-circles-black/100/Neon_Line_Social_Circles_50Icon_10px_grid-25-512.png" />
-                                <span class="text">linkedin.com/in/a-l-guerra</span>
-                            </a>
-                    </div>
-                </div>
-            <div class="sidebar">
-                <article>
-                    <h1>
-                        SKILLS
-                    </h1>
-                    <ul>
-                        <li>
-                            SQL
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:60%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            VBA
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:80%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            MS Access
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:90%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            VB
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:40%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            C#
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:40%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            ASP.NET
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:50%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            .NET CORE
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:40%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            HTML
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:70%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            CSS
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:70%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                        <li>
-                            JavaScript
-                            <div class="proficiency w3-light-grey w3-round">
-                                    <div class="proficiency-bar w3-container w3-grey w3-round" style="height:20px;width:30%"><span class="pr">PROFICIENCY</span></div>
-                            </div>
-                        </li>
-                    </ul>
-                    <hr>
-                    <h1>
-                        EDUCATION
-                    </h1>
-                    <p><strong>
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+
+            document.body.innerHTML =
+                "<html><head><title></title></head><body>" +
+                divElements + "</body>";
+
+            window.print();
+
+            document.body.innerHTML = oldPage;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="name">ADRIANA GUERRA</div>
+            <div class="contact">
+                <a class="email" href="mailto: adriana.luz.guerra@gmail.com">
+                    <img
+                        src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png" />
+                    <span class="text">adriana.luz.guerra@gmail.com</span>
+                </a>
+                <a class="phone" href="tel: 019497638167">
+                    <img src="https://mbtskoudsalg.com/images/phone-vector-png-2.png" />
+                    <span class="text">+1 949 763 8167</span>
+                </a>
+                <a class="linkedin" href="https://www.linkedin.com/in/a-l-guerra/">
+                    <img class="li-icon"
+                        src="https://cdn2.iconfinder.com/data/icons/neon-line-social-circles-black/100/Neon_Line_Social_Circles_50Icon_10px_grid-25-512.png" />
+                    <span class="text">linkedin.com/in/a-l-guerra</span>
+                </a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <article>
+                <h1>
+                    SKILLS
+                </h1>
+                <ul>
+                    <li>
+                        JavaScript
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:50%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        VB
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        C#
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        ASP.NET
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        .NET CORE
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:40%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        HTML
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        CSS
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        SQL
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        VBA
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                    <li>
+                        MS Access
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:90%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li>
+                </ul>
+                <hr>
+                <h1>
+                    EDUCATION
+                </h1>
+                <p><strong>
                         UNIVERSITY OF CALIFORNIA, BERKELEY</strong><br><i> Graduated May 2007</i>
-                        <br>
-                        BA in Cognitive Science
-                    </p>
-                    <hr>
-                    <h1>
-                            SOFT SKILLS
-                        </h1>
-                        <ul class="lang">
-                            <li class="language">
-                                Leadership
-                            </li>
-                            <li class="language">
-                                Teaching/Mentoring
-                            </li>
-                            <li class="language">
-                                Troubleshooting
-                            </li>
-                            <li class="language">
-                                Communication
-                            </li>
-                        </ul>
-                        <hr>
-                    
-                    <h1>
-                        LANGUAGES
-                    </h1>
-                    <ul class="lang">
-                        <li class="language">
-                            English: Native
-                        </li>
-                        <li class="language">
-                            Spanish: Fluent
-                        </li>
-                        <li class="language">
-                            French: Proficient
-                        </li>
-                    </ul>
-                    <hr>
-                    <!--<h1>
+                    <br>
+                    BA in Cognitive Science
+                </p>
+                <hr>
+                <h1>
+                    SOFT SKILLS
+                </h1>
+                <ul class="lang">
+                    <li class="language">
+                        Leadership
+                    </li>
+                    <li class="language">
+                        Teaching/Mentoring
+                    </li>
+                    <li class="language">
+                        Troubleshooting
+                    </li>
+                    <li class="language">
+                        Communication
+                    </li>
+                </ul>
+                <hr>
+
+                <h1>
+                    LANGUAGES
+                </h1>
+                <ul class="lang">
+                    <li class="language">
+                        English: Native
+                    </li>
+                    <li class="language">
+                        Spanish: Fluent
+                    </li>
+                    <li class="language">
+                        French: Proficient
+                    </li>
+                </ul>
+                <hr>
+                <!--<h1>
                         INTERESTS
                     </h1>
                     <p>SCUBA Diving &middot Swimming &middot Hiking &middot Biking &middot Sustainability &middot Cooking &middot World Travel &middot Applied Cognition</p>
                     <hr>-->
-                    <h1>ADDITIONAL</h1>
-                    <p>
-                        US Citizen<br>
+                <h1>ADDITIONAL</h1>
+                <p>
+                    US Citizen<br>
                     <!--<i>References available upon request.</i>-->
-                    </p>
-                </article>
-            </div>
+                </p>
+            </article>
+        </div>
 
-            <div class="content">
-                <article><!-- new section for content -->
-                    <h1>PROFILE</h1>
-                    <p class="profile">
-                            I am a self-motivated developer dedicated to research and learning in pursuit of well-designed code. Working in a variety of fields, from SCUBA diving to neuroscience research, has helped me learn to see the big picture and given me the ability to interpret end user needs. I am interested in developing efficient code that is user-friendly and versatile in an environment that will challenge me.                    </p>
+        <div class="content">
+            <article>
+                <!-- new section for content -->
+                <h1>PROFILE</h1>
+                <p class="profile">
+                    I am a self-motivated developer dedicated to the pursuit of well-designed software and systems.
+                    Working in a variety of fields, from SCUBA diving to neuroscience research, has given me the
+                    opportunity to develop strong skills in the interpretation of user needs and to apply my development
+                    skills to wide a variety of projects. I am interested in developing efficient systems that are
+                    user-friendly and versatile.
                     <hr>
                     <h1>EXPERIENCE</h1>
                     <div class="job">
-                            <h2>SOFTWARE DEVELOPER</h2>
-                            <h3>Bubble Solutions, 2017 - Present</h3>
-                            <p>
-                                Developed business management software for SCUBA diving centers using MS Access, VBA, SQL, ASP.NET, C#, and VB.NET. I streamlined the customer registration process through a registration form accessible by media device and simplified business activities such as course registrations, product purchases, and employee pay sheets by consolidating them into one user-friendly data management system.  I am currently working on converting our student management tools into a web app for SCUBA instructors and dive centers.
-                            </p>
-                        </div>
-                        <div class="job">
-                            <h2>PROGRAM COORDINATOR</h2>
-                            <h3>Roctopus Pro Center, Koh Tao, Thailand, 2018</h3>
-                            <p>
-                                Reorganized and oversaw a SCUBA diving professional training program.  During my time with Roctopus Pro, I developed a training schedule to maximize opportunities for trainees while minimizing redundant work for limited staff, developed Google Sheet and Google Script based program management tools to track training progress easily, revamped the out-dated website, developed HTML email templates, oversaw social media, and responded to program inquiries.
-                                
-                            </p>
-                        </div>
-                        <div class="job">
-                            <h2>INSTRUCTOR</h2>
-                            <h3>Sairee Cottage Diving, Koh Tao, Thailand, 2013 - 2018</h3>
-                            <p>
-                                    Worked as a head SCUBA diving instructor at a well regarded dive shop on one of the busiest diving locations in the world. As a head instructor I was responsible for teaching courses of all levels, from introductory experiences to courses for aspiring professionals. My responsibilities included organizing diving trips, and mentoring interns while ensuring the safety of all of my divers.     
-                            </p>
-                        </div>
-                        <div class="job">
-                            <h2>STAFF RESEARCH ASSOCIATE</h2>
-                            <h3>Univeristy of California, San Diego, 2010 - 2012</h3>
-                            <p>
-                                Worked with the Research on Aging and Development Lab and the Swartz Center for Computational Neuroscience. My responsibilities included collecting neurobehavioral measures (i.e. electroencephalography, eye tracking, body motion capture, and behavioral tests) from typical and clinical populations, analyzing data using specialized software, and developing scripts and protocols to test the accuracy of data stream integration from various data sources with varying sampling rates.
-                            </p>
-                        </div>
-                    <span style="font-weight:600;font-size: 10pt;float:right;"><i>Additional experience available upon request.</i></span>
+                        <h2>SOFTWARE DEVELOPER</h2>
+                        <h3>Self Employed, 2017 - Present</h3>
+                        <p>
+                            Developed business management software for SCUBA diving centers using MS Access, VBA, SQL,
+                            ASP.NET, C#, VB.NET, and Javascript . I streamlined the customer registration process
+                            through a
+                            registration form accessible by media device and simplified business activities such as
+                            course registrations, product purchases, and employee pay sheets by consolidating them into
+                            one user-friendly data management system. I am currently working on converting our student
+                            management tools into a web app for SCUBA instructors and dive centers.
+                        </p>
+                    </div>
+                    <div class="job">
+                        <h2>PROGRAM COORDINATOR</h2>
+                        <h3>Roctopus Pro Center, Koh Tao, Thailand, 2018</h3>
+                        <p>
+                            Reorganized and oversaw a SCUBA diving professional training program. During my time with
+                            Roctopus Pro, I developed a training schedule to maximize opportunities for trainees while
+                            minimizing redundant work for the limited staff. I also developed Google Sheet and Google
+                            Script based
+                            program management tools to track training progress easily, revamped the out-dated website,
+                            developed HTML email templates, oversaw social media, and responded to program inquiries.
+
+                        </p>
+                    </div>
+                    <div class="job">
+                        <h2>INSTRUCTOR</h2>
+                        <h3>Sairee Cottage Diving, Koh Tao, Thailand, 2013 - 2018</h3>
+                        <p>
+                            Worked as a head SCUBA diving instructor at a well regarded dive shop in one of the busiest
+                            diving locations in the world. As a head instructor I was responsible for teaching courses
+                            of all levels, from introductory experiences to courses for aspiring professionals. My
+                            responsibilities included organizing diving trips and mentoring interns while ensuring the
+                            safety of all of my divers.
+                        </p>
+                    </div>
+                    <div class="job">
+                        <h2>STAFF RESEARCH ASSOCIATE</h2>
+                        <h3>Univeristy of California, San Diego, 2010 - 2012</h3>
+                        <p>
+                            Worked with the Research on Aging and Development Lab and the Swartz Center for
+                            Computational Neuroscience. My responsibilities included collecting neurobehavioral measures
+                            (i.e. electroencephalography, eye tracking, body motion capture, and behavioral tests) from
+                            typical and clinical populations, analyzing data using specialized software, and developing
+                            protocols and Python scripts to test the accuracy of data stream integration from various
+                            data
+                            sources with varying sampling rates.
+                        </p>
+                    </div>
+                    <div class="job">
+                        <h2>NEUROPSYCHOLOGICAL EXAMINER</h2>
+                        <h3>Univeristy of California, Irvine, 2008 - 2010</h3>
+                        <p>
+                            Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals over
+                            90 years old. My responsibilities included performing in-person neuropsychological
+                            examinations on participants, organizing and administering out-of-state participant
+                            examinations, auditing peer data, participating in post-mortem case conferencing, and
+                            modernizing data collection methods and database integration.
+                        </p>
+                    </div>
+                    <span style="font-weight:bold"><i>Additional experience available upon request.</i></span>
                     <hr class="full-screen">
-                </article>
-            </div>
+            </article>
         </div>
-             
-    </body>
+    </div>
+
+</body>
+
 </html>
-
-
