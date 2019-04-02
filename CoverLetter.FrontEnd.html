@@ -1,156 +1,167 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">  
-        <style>
 
-            html {
-                -ms-overflow-style: -ms-autohiding-scrollbar;
-            }
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+        html {
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
 
-            body {
-                font-family: 'Raleway', sans-serif;
-                height: 842px;
-                width: 700px;
-                /* to centre page on screen*/
-                margin-left: auto;
-                margin-right: auto;
-            }
+        body {
+            font-family: 'Raleway', sans-serif;
+            height: 842px;
+            width: 700px;
+            /* to centre page on screen*/
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-            @page {
-                size: letter;
-            }
+        @page {
+            size: letter;
+        }
 
-            .page {
-                display: grid;
-                grid-template-rows: 100px calc(842px - 100px);  /* height limitation on second row */
-                grid-template-columns: auto;
-                grid-template-areas: "header" 
-                                    "content";
-            }
+        .page {
+            display: grid;
+            grid-template-rows: 100px calc(842px - 100px);
+            /* height limitation on second row */
+            grid-template-columns: auto;
+            grid-template-areas: "header"
+                "content";
+        }
 
-            .sidebar {
-                grid-area: sidebar;
-                border-right-color: black;
-                border-right-style: solid;
-                border-right-width: thin;
-                overflow: visible;
-            }
+        .sidebar {
+            grid-area: sidebar;
+            border-right-color: black;
+            border-right-style: solid;
+            border-right-width: thin;
+            overflow: visible;
+        }
 
-            .header {
-                text-align: center;
-                grid-area: header;
-                border-bottom-color: black;
-                border-bottom-style: solid;
-                border-bottom-width: medium;
-            }
+        .header {
+            text-align: center;
+            grid-area: header;
+            border-bottom-color: black;
+            border-bottom-style: solid;
+            border-bottom-width: medium;
+        }
 
-            .name {
-                font-size: 28pt;
-                font-weight: semi-bold;
-                letter-spacing: 3px;
-                display: block;
+        .name {
+            font-size: 28pt;
+            font-weight: semi-bold;
+            letter-spacing: 3px;
+            display: block;
 
-                margin: 0;
-            }
-            .contact {
-                display: block;
-                padding-bottom: 10px;
-                margin:0;
-            }
+            margin: 0;
+        }
 
-            .text {
-                font-size: 10pt;
-            }
+        .contact {
+            display: block;
+            padding-bottom: 10px;
+            margin: 0;
+        }
 
-            .contact a:link{
-                text-decoration: none;
-            }
+        .text {
+            font-size: 10pt;
+        }
 
-            img {
-                vertical-align: middle;
-                padding-right: 5px;
-                height: auto;
-                width: 20pt;
-            }
+        .contact a:link {
+            text-decoration: none;
+        }
 
-            .email, .phone, .linkedin{
-                display: inline-block;
-                padding-left:10px;
-                padding-right:0px;
-                vertical-align: middle;
-            }
-            
-            .linkedin .text, .phone .text, .email .text {
-                padding-top: 5px;
-                vertical-align: middle;
-                visibility: visible;
-                display: inline-block;
-            }
+        img {
+            vertical-align: middle;
+            padding-right: 5px;
+            height: auto;
+            width: 20pt;
+        }
 
-            .li-icon {
-                width: 25pt;
-                height: auto;
-            }
+        .email,
+        .phone,
+        .linkedin {
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 0px;
+            vertical-align: middle;
+        }
 
-            .content {
-                grid-area: content;
-                overflow:visible;                        /* overflow condition on parent */
-            }
+        .linkedin .text,
+        .phone .text,
+        .email .text {
+            padding-top: 5px;
+            vertical-align: middle;
+            visibility: visible;
+            display: inline-block;
+        }
 
-           
-            p {
-                font-size: 10pt;
-                margin-top: 10px;
-            }
-            
-            .salutation {
-                text-align: left;
-            }
-            @media print {
-    footer {page-break-after: always;}
-}
+        .li-icon {
+            width: 25pt;
+            height: auto;
+        }
 
-        </style>
-        <script language="javascript" type="text/javascript">
-            function printDiv(divID) 
-            {
-                var divElements = document.getElementById(divID).innerHTML;
-                var oldPage = document.body.innerHTML;
-     
-                document.body.innerHTML = 
-                  "<html><head><title></title></head><body>" + 
-                  divElements + "</body>";
-     
-                window.print();
-     
-                document.body.innerHTML = oldPage;
+        .content {
+            grid-area: content;
+            overflow: visible;
+            /* overflow condition on parent */
+        }
+
+
+        p {
+            font-size: 10pt;
+            margin-top: 10px;
+        }
+
+        .salutation {
+            text-align: left;
+        }
+
+        @media print {
+            footer {
+                page-break-after: always;
             }
-        </script>
-        
-    </head>
-    <body>
-        <div class="page">
-            <div class="header">
-                <div class="name">ADRIANA GUERRA</div>
-                <div class="contact">
-                        <a class="email" href="mailto: adriana.luz.guerra@gmail.com">
-                        <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png" />
-                            <span class="text">adriana.luz.guerra@gmail.com</span>
-                        </a>
-                        <a class="phone" href="tel: 019497638167">
-                            <img src="https://mbtskoudsalg.com/images/phone-vector-png-2.png" />
-                            <span class="text">+1 949 763 8167</span>
-                        </a>
-                        <a class="linkedin" href="https://www.linkedin.com/in/a-l-guerra/">
-                            <img class="li-icon" src="https://cdn2.iconfinder.com/data/icons/neon-line-social-circles-black/100/Neon_Line_Social_Circles_50Icon_10px_grid-25-512.png" />
-                            <span class="text">linkedin.com/in/a-l-guerra</span>
-                        </a>
-                </div>
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+
+            document.body.innerHTML =
+                "<html><head><title></title></head><body>" +
+                divElements + "</body>";
+
+            window.print();
+
+            document.body.innerHTML = oldPage;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="name">ADRIANA GUERRA</div>
+            <div class="contact">
+                <a class="email" href="mailto: adriana.luz.guerra@gmail.com">
+                    <img
+                        src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png" />
+                    <span class="text">adriana.luz.guerra@gmail.com</span>
+                </a>
+                <a class="phone" href="tel: 019497638167">
+                    <img src="https://mbtskoudsalg.com/images/phone-vector-png-2.png" />
+                    <span class="text">+1 949 763 8167</span>
+                </a>
+                <a class="linkedin" href="https://www.linkedin.com/in/a-l-guerra/">
+                    <img class="li-icon"
+                        src="https://cdn2.iconfinder.com/data/icons/neon-line-social-circles-black/100/Neon_Line_Social_Circles_50Icon_10px_grid-25-512.png" />
+                    <span class="text">linkedin.com/in/a-l-guerra</span>
+                </a>
             </div>
-            <div class="content">
+        </div>
+        <div class="content">
             <div class="salutation">
                 <p>
                     To Whom It May Concern:
@@ -158,14 +169,16 @@
             </div>
             <div class="text">
                 <p>
-                    I writing to express my interest in applying for the position of HTML/CSS/JavaScript - Front End Web Developer. The experience that I have gained while working in a variety of fields and expanding the programming skills I acquired at UC Berkeley would help make me an asset to your company.
+                    I writing to express my interest in applying for the Web Developer position. My experience and qualifications are in line with the requirements you have listed for this
+                    position. I have experience using HTML, and CSS, including Bootsrap, to code responsive websites
+                    and email templates. I also have experience working with JavaScript as well as C# and VB.NET with
+                    ASP.NET and .NET framework.
                 </p>
-  
                 <p>
-My experience and qualifications are in line with the requirements you have listed for this position.  I have experience with Front End web development using HTML, CSS, Javascript, Bootstrap, ASP.NET, and Razor pages.  I have also developed WordPress websites that incorporated some HTML and CSS. Beyond that, I have developed full web applications using .NET Framework, .NET CORE, VB.NET, C#, and SQL so I am familiar with how to use different levels of web development in ways that compliment each other and imporve user experience. I also have experience working directly with clients and partners to develop web apps and business management software that maximize ease of use, effciency, and functionality while meeting client needs. 
-                </p>
-                <p>
-                    I find fulfillment in being challenged, in learning new ways to design intuitive, user friendly applications, and in sharing my knowledge to others. I am eager to bring the same drive and propensity for learning that has allowed me to work successfully in a variety of fields to your company.
+                    I find fulfillment in being challenged, in learning new ways to design intuitive, user friendly
+                    applications, and in sharing my knowledge to others. I am eager to bring the same drive and
+                    propensity for learning that has allowed me to work successfully in a variety of fields to your
+                    company.
                 </p>
                 <p>
                     Thank you for your consideration. I look forward to hearing from you.
@@ -173,12 +186,13 @@ My experience and qualifications are in line with the requirements you have list
             </div>
             <div class="closing">
                 <p>
-                Sincerely,
-                <br>
-                Adriana Guerra
+                    Sincerely,
+                    <br>
+                    Adriana Guerra
                 </p>
             </div>
-            </div>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
