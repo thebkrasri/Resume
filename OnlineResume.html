@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <style>
+        html {
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            height: 842px;
+            width: 700px;
+            /* to centre page on screen*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @page {
+            size: letter;
+        }
+
+        .page {
+            display: grid;
+            grid-template-rows: auto auto;
+            /* height limitation on second row */
+            grid-template-columns: auto;
+            grid-template-areas: " header"
+                " content"
+                " content";
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            border-right-color: black;
+            border-right-style: solid;
+            border-right-width: thin;
+            overflow: visible;
+        }
+
+        .header {
+            text-align: center;
+            grid-area: header;
+            border-bottom-color: black;
+            border-bottom-style: solid;
+            border-bottom-width: medium;
+        }
+
+        .name {
+            font-size: 20pt;
+            font-weight: semi-bold;
+            letter-spacing: 3px;
+            display: block;
+            margin: 0;
+        }
+
+        .contact {
+            display: block;
+            padding-bottom: 10px;
+            margin: 0;
+        }
+
+        .text {
+            font-size: 10pt;
+        }
+
+        .contact a:link {
+            text-decoration: none;
+        }
+
+        img {
+            vertical-align: middle;
+            padding-right: 5px;
+            height: auto;
+            width: 20pt;
+        }
+
+        .email,
+        .phone,
+        .linkedin {
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 0px;
+            vertical-align: middle;
+        }
+
+        .linkedin .text,
+        .phone .text,
+        .email .text {
+            padding-top: 5px;
+            vertical-align: middle;
+            visibility: visible;
+            display: inline-block;
+        }
+
+        .li-icon {
+            width: 25pt;
+            height: auto;
+        }
+
+        .content {
+            grid-area: content;
+            overflow: visible;
+            /* overflow condition on parent */
+        }
+
+        article {
+            height: auto;
+            text-align: left;
+            margin: 15px;
+            padding-bottom: 10px;
+            /* height set on child; triggers scroll */
+        }
+
+        hr {
+            padding: 0px;
+            margin: 0px;
+            margin-top: 10px;
+        }
+
+        h1 {
+            color: slategrey;
+            font-size: 10pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 10pt;
+            font-weight: 600;
+            line-height: 1;
+            margin: 1px;
+        }
+
+        h3 {
+            font-size: 10pt;
+            font-weight: normal;
+            color: black;
+            line-height: 1;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .dates {
+            line-height: 1;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 10pt;
+            margin-top: 0;
+        }
+
+        .job {
+
+
+            line-height: 1.4;
+            padding-top: 0px;
+        }
+
+        .profile {
+            line-height: 1.4;
+
+            text-align: left;
+        }
+
+
+        .full-screen {
+            display: none;
+        }
+
+        .proficiency {
+            display: none;
+            padding-right: 10px;
+        }
+
+        .pr {
+            font-size: 10pt;
+            font-style: italic;
+            margin: 0;
+            position: static;
+            display: none;
+        }
+
+        .points {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        li {
+            vertical-align: middle;
+            font-size: 10pt;
+        }
+
+        li span {
+            position: relative;
+            left: -10px;
+        }
+
+        .horizontal {
+            font-size: 10pt;
+            display: inline-flex;
+            vertical-align: middle;
+        }
+
+        .horizontals {
+            line-height: 1;
+            padding: 0;
+            margin: 0px;
+            list-style-type: disc;
+            text-align: center;
+            list-style-position: outside;
+        }
+
+        .job .horizontals {
+            margin-top: 10px;
+        }
+
+        .horizontal:before {
+            content: '\00a0\2022\00a0\00a0';
+            color: #999;
+            color: rgba(0, 0, 0, 0.5);
+            line-height: 1;
+        }
+
+        .horizontal:first-child:before {
+            content: "";
+        }
+
+        .w3-container {
+            display: none;
+            height: 10px;
+        }
+
+        @media print {
+            footer {
+                page-break-after: always;
+            }
+        }
+    </style>
+    <script language="javascript" type="text/javascript">
+        function printDiv(divID) {
+            var divElements = document.getElementById(divID).innerHTML;
+            var oldPage = document.body.innerHTML;
+
+            document.body.innerHTML =
+                "<html><head><title></title></head><body>" +
+                divElements + "</body>";
+
+            window.print();
+
+            document.body.innerHTML = oldPage;
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="name">ADRIANA GUERRA</div>
+            <div class="contact">
+                <a class="email" href="mailto: adriana.luz.guerra@gmail.com">
+                    <img
+                        src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-58-512.png" />
+                    <span class="text">adriana.luz.guerra@gmail.com</span>
+                </a>
+                <a class="phone" href="tel: 019497638167">
+                    <img src="https://mbtskoudsalg.com/images/phone-vector-png-2.png" />
+                    <span class="text">+1 949 763 8167</span>
+                </a>
+                <a class="linkedin" href="https://www.linkedin.com/in/a-l-guerra/">
+                    <img class="li-icon"
+                        src="https://cdn2.iconfinder.com/data/icons/neon-line-social-circles-black/100/Neon_Line_Social_Circles_50Icon_10px_grid-25-512.png" />
+                    <span class="text">linkedin.com/in/a-l-guerra</span>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <article>
+                <div id="profile">
+                    <h1>SUMMARY</h1>
+                    <p class="profile">
+                        I am a self-motivated developer dedicated to the pursuit of well-designed software and systems.
+                        Working in a variety of fields, from SCUBA diving to neuroscience research, has given me the
+                        opportunity to develop strong skills in the interpretation of user needs and to apply my
+                        development
+                        skills to wide a variety of projects. I am interested in developing efficient systems that are
+                        user-friendly and versatile.
+                    </p>
+                </div>
+                <hr>
+                <div id="skills">
+                    <h1>
+                        SKILLS
+                    </h1>
+                    <ul class="horizontals">
+                        <li class="horizontal">
+                            JavaScript
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:50%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            VB
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            C#
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            ASP.NET
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            .NET Framework
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:50%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            .NET CORE
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:30%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            HTML
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            CSS
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            SQL
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <li class="horizontal">
+                            VBA
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </li>
+                        <!-- li>
+                        MS Access
+                        <div class="w3-light-grey w3-round">
+                            <div class="w3-container w3-grey w3-round" style="width:90%"><span
+                                    class="pr">PROFICIENCY</span></div>
+                        </div>
+                    </li-->
+                    </ul>
+                </div>
+                <hr>
+                <!-- new section for content -->
+                <div id="experience">
+                    <h1>EXPERIENCE</h1>
+                    <div class="job">
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>SOFTWARE DEVELOPER</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Bubble Manager & Bubble Cert</h3>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Aug 2017 - Present</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>
+                                With a partner, developed customized SaaS business management software for SCUBA diving centers using MS
+                                Access that is currently used at 19 dive centers in 4 countries.
+                            </li>
+                            <li>
+                                Streamlined the customer registration process through a dynamic and responsive web-form
+                                using ASP.NET, C#, HTML, CSS, JavaScript, and JQuery.
+                            </li>
+                            <li>
+                                Simplified customer enrollment with international SCUBA diving agencies by posting
+                                customer data directly to dive agency web-servers from the business
+                                management system using VBA and winhttp requests.
+                            </li>
+                            <li>Developed installation .bat and .ps1 scripts to automate the server and data management software installation.</li>
+                            <li>
+                                Built a web-app for SCUBA instructors and dive centers using ASP.NET, .NET Framework,
+                                VB.NET, SQL, HTML, CSS, JavaScript, JQuery, AJAX, and REST API to simplify the
+                                registration
+                                and
+                                certification of students with international SCUBA diving agencies.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="job">
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>PROGRAM COORDINATOR</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Roctopus Pro Center</h3>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Koh Tao, Thailand</h3>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Jun 2018 - Sep 2018</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>
+                                Reorganized and oversaw a SCUBA diving professional training program.
+                            </li>
+                            <li>Developed a training schedule to maximize opportunities for trainees while
+                                minimizing redundant work for the limited staff.
+                            </li>
+                            <li>Created Google Sheet and Google
+                                Script based program management tools to track student training progress easily.
+                            </li>
+                            <li>Updated design and contect of the website using WordPress and Google Analytics.
+                            </li>
+                            <li>
+                                Developed email templates using HTML and CSS.
+                            </li>
+                            <li>
+                                Oversaw social media and responded to program
+                                inquiries.
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="job">
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>SCUBA INSTRUCTOR</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Sairee Cottage Diving</h3>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Koh Tao, Thailand</h3>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Nov 2013 - Jan 2018</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>Worked as a head SCUBA instructor at a dive resort in one of the
+                                busiest diving destinations in the world.</li>
+                            <li>Taught students of all levels, from introductory experiences to courses for aspiring
+                                professionals.</li>
+                            <li>Received 5 student-elected PADI recognition awards for my teaching.</li>
+                            <li>Organized diving trips and mentored interns while teaching courses.</li>
+                        </ul>
+                    </div>
+                    <div class="job">
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>STAFF RESEARCH ASSOCIATE</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Univeristy of California, San Diego</h3>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Sep 2010 - Aug 2012</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>Worked with the Research on Aging and Development Lab and the Swartz Center for
+                                    Computational Neuroscience.</li>
+                            <li>Collected neurobehavioral measures
+                            (i.e. electroencephalography, eye tracking, body-motion capture, and behavioral tests) from
+                            typical and clinical populations.</li>
+                             <li>Analyzed data using specialized software.</li>
+                             <li> Developed protocols and Python scripts to test the accuracy of datastream integration from data sources with varying sampling rates.</li>
+                        </ul>
+                    </div>
+                    <div class="job" style="display:none">
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>NEUROPSYCHOLOGICAL EXAMINER</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Univeristy of California, Irvine</h3>
+                            </li>
+                            <li class="horizontal">Oct 2008 - Mar 2010</li>
+                        </ul>
+                        <ul>
+                            Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals over
+                            90 years old. My responsibilities included performing in-person neuropsychological
+                            examinations on participants, organizing and administering out-of-state participant
+                            examinations, auditing peer data, participating in post-mortem case conferencing, and
+                            modernizing data collection methods and database integration.
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div id="education">
+                    <h1>
+                        EDUCATION
+                    </h1>
+                    <ul class="horizontals">
+                        <li class="horizontal"><b>
+                                UNIVERSITY OF CALIFORNIA, BERKELEY</b>
+                        </li>
+                        <li class="horizontal">
+                            <i>BA in Cognitive Science</i>
+                        </li>
+                    </ul>
+                </div>
+                <hr style="display:none">
+                <div id="softskills" style="display:none">
+                    <h1>
+                        SOFT SKILLS
+                    </h1>
+                    <ul class="horizontals">
+                        <li class="horizontal">
+                            Leadership
+                        </li>
+                        <li class="horizontal">
+                            Teaching/Mentoring
+                        </li>
+                        <li class="horizontal">
+                            Troubleshooting
+                        </li>
+                        <li class="horizontal">
+                            Communication
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div id="langauges">
+                    <h1>
+                        LANGUAGES
+                    </h1>
+                    <ul class="horizontals">
+                        <li class="horizontal">
+                            English: Native
+                        </li>
+                        <li class="horizontal">
+                            Spanish: Fluent
+                        </li>
+                        <li class="horizontal">
+                            French: Proficient
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <!--<h1>
+                            INTERESTS
+                        </h1>
+                        <p>SCUBA Diving &middot Swimming &middot Hiking &middot Biking &middot Sustainability &middot Cooking &middot World Travel &middot Applied Cognition</p>
+                        <hr>-->
+                <div id="additional">
+                    <h1>ADDITIONAL</h1>
+                    <ul class="horizontals">
+                        <li class="horizontal">US Citizen</li>
+                        <!--<i>References available upon request.</i>-->
+                        <li class="horizontal"><i>Additional experience available upon
+                                    request.</i>
+                        </li>
+                        <li class="horizontal"><i>References experience available upon
+                                request.</i>
+                    </li>
+                    </ul>
+                </div>
+                <hr class="full-screen">
+            </article>
+        </div>
+    </div>
+
+</body>
+
+</html>
