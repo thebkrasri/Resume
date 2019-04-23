@@ -17,6 +17,7 @@
             /* to centre page on screen*/
             margin-left: auto;
             margin-right: auto;
+            font-size: 10pt;
         }
 
         @page {
@@ -25,9 +26,9 @@
 
         .page {
             display: grid;
-            grid-template-rows: 100px calc(842px - 100px);
+            grid-template-rows: 80px calc(842px - 80px);
             /* height limitation on second row */
-            grid-template-columns: 25% auto;
+            grid-template-columns: 22% auto;
             grid-template-areas: "header header"
                 "sidebar content"
                 "sidebar content";
@@ -50,11 +51,10 @@
         }
 
         .name {
-            font-size: 28pt;
+            font-size: 20pt;
             font-weight: semi-bold;
             letter-spacing: 3px;
             display: block;
-
             margin: 0;
         }
 
@@ -111,8 +111,8 @@
         article {
             height: auto;
             text-align: left;
-            margin: 15px;
-            padding-bottom: 10px;
+            margin: 10px;
+            margin-bottom: 0;
             /* height set on child; triggers scroll */
         }
 
@@ -138,16 +138,15 @@
         }
 
         h3 {
-            font-size: 9pt;
-            font-weight: 800;
-            color: lightslategray;
+            font-size: 10pt;
+            font-weight: normal;
+            color: darkslategray;
             line-height: 1.8;
             margin-top: 0px;
             margin-bottom: 0px;
         }
 
         p {
-            font-size: 9pt;
             margin-top: 0;
         }
 
@@ -205,9 +204,53 @@
             content: none;
         }
 
+        .points {
+            margin: 2px 0;
+            padding: 0;
+        }
+
+        li {
+            vertical-align: middle;
+            font-size: 10pt;
+        }
+
+        li span {
+            position: relative;
+            left: -8px;
+        }
+
+        .horizontal {
+            font-size: 10pt;
+            display: inline-flex;
+            vertical-align: middle;
+        }
+
+        .horizontals {
+            line-height: 1;
+            padding: 0;
+            margin: 0px;
+            list-style-type: disc;
+            text-align: left;
+            list-style-position: outside;
+        }
+
+        .horizontal:before {
+            content: '\00a0\2022\00a0';
+            color: #999;
+            color: rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+            font-size: 14pt;
+        }
+
+        .horizontal:first-child:before {
+            content: "";
+        }
+
         .w3-container {
             height: 10px;
+            display: none;
         }
+
         @media print {
             footer {
                 page-break-after: always;
@@ -259,90 +302,112 @@
                 </h1>
                 <ul>
                     <li>
-                        JavaScript
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:50%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            JavaScript
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:50%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        VB
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            VB
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        C#
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            C#
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        ASP.NET
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            ASP.NET
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        .NET Framework
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:50%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            .NET Framework
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:50%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        .NET CORE
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:30%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            .NET CORE
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:30%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        HTML
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:80%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            HTML
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        CSS
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:80%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            CSS
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        SQL
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:60%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            SQL
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:60%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                     <li>
-                        VBA
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:80%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                        <span>
+                            VBA
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:80%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
-                    <li>
-                        MS Access
-                        <div class="w3-light-grey w3-round">
-                            <div class="w3-container w3-grey w3-round" style="width:90%"><span
-                                    class="pr">PROFICIENCY</span></div>
-                        </div>
+                    <li style="display: none">
+                        <span>
+                            MS Access
+                            <div class="w3-light-grey w3-round">
+                                <div class="w3-container w3-grey w3-round" style="width:90%"><span
+                                        class="pr">PROFICIENCY</span></div>
+                            </div>
+                        </span>
                     </li>
                 </ul>
                 <hr>
                 <h1>
                     EDUCATION
                 </h1>
-                <p><strong>
-                        UNIVERSITY OF CALIFORNIA, BERKELEY</strong><br><i> Graduated May 2007</i>
-                    <br>
+                
+                    <h2>UC BERKELEY</h2>
+                    <p>
                     BA in Cognitive Science
                 </p>
                 <hr>
@@ -351,16 +416,24 @@
                 </h1>
                 <ul class="lang">
                     <li class="language">
-                        Leadership
+                        <span>
+                            Leadership
+                        </span>
                     </li>
                     <li class="language">
-                        Teaching/Mentoring
+                        <span>
+                            Teaching/Mentoring
+                        </span>
                     </li>
                     <li class="language">
-                        Troubleshooting
+                        <span>
+                            Troubleshooting
+                        </span>
                     </li>
                     <li class="language">
-                        Communication
+                        <span>
+                            Communication
+                        </span>
                     </li>
                 </ul>
                 <hr>
@@ -370,13 +443,19 @@
                 </h1>
                 <ul class="lang">
                     <li class="language">
-                        English: Native
+                        <span>
+                            English: Native
+                        </span>
                     </li>
                     <li class="language">
-                        Spanish: Fluent
+                        <span>
+                            Spanish: Fluent
+                        </span>
                     </li>
                     <li class="language">
-                        French: Proficient
+                        <span>
+                            French: Proficient
+                        </span>
                     </li>
                 </ul>
                 <hr>
@@ -388,7 +467,7 @@
                 <h1>ADDITIONAL</h1>
                 <p>
                     US Citizen<br>
-                    <!--<i>References available upon request.</i>-->
+                    <i>References and additional experience available upon request.</i>
                 </p>
             </article>
         </div>
@@ -403,71 +482,211 @@
                     opportunity to develop strong skills in the interpretation of user needs and to apply my development
                     skills to wide a variety of projects. I am interested in developing efficient systems that are
                     user-friendly and versatile.
-                    <hr>
+                </p>
+                <hr>
+                <div id="experience">
                     <h1>EXPERIENCE</h1>
                     <div class="job">
-                        <h2>SOFTWARE DEVELOPER</h2>
-                        <h3>Self Employed, 2017 - Present</h3>
-                        <p>
-                            Developed business management software for SCUBA diving centers using MS Access, VBA, SQL,
-                            ASP.NET, C#, VB.NET, and Javascript . I streamlined the customer registration process
-                            through a
-                            registration form accessible by media device and simplified business activities such as
-                            course registrations, product purchases, and employee pay sheets by consolidating them into
-                            one user-friendly data management system. I am currently working on converting our student
-                            management tools into a web app for SCUBA instructors and dive centers.
-                        </p>
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>SOFTWARE DEVELOPER</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Bubble Manager & Bubble Cert, Aug 2017 - Present</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>
+                                With a partner, developed customized SaaS business management software for SCUBA
+                                centers using MS Access and VBA that is currently used at 19 centers in 4 countries.
+                            </li>
+                            <li>
+                                Streamlined the customer registration process through a dynamic and responsive web-form
+                                using ASP.NET, C#, HTML, CSS, JavaScript, and JQuery.
+                            </li>
+                            <li>
+                                Simplified customer enrollment with international SCUBA agencies by posting
+                                customer data directly to dive agency web-servers from the business
+                                management system using VBA and WinHTTP requests.
+                            </li>
+                            <li>Developed Batch and PowerShell scripts to automate the data management software
+                                installation and configuration.</li>
+                            <li>
+                                Built a web-app for SCUBA instructors and SCUBA centers using ASP.NET, .NET Framework,
+                                VB.NET, SQL, HTML, CSS, JavaScript, JQuery, AJAX, and REST API to simplify the
+                                registration and certification of students with international SCUBA agencies.
+                            </li>
+                        </ul>
                     </div>
                     <div class="job">
-                        <h2>PROGRAM COORDINATOR</h2>
-                        <h3>Roctopus Pro Center, Koh Tao, Thailand, 2018</h3>
-                        <p>
-                            Reorganized and oversaw a SCUBA diving professional training program. During my time with
-                            Roctopus Pro, I developed a training schedule to maximize opportunities for trainees while
-                            minimizing redundant work for the limited staff. I also developed Google Sheet and Google
-                            Script based
-                            program management tools to track training progress easily, revamped the out-dated website,
-                            developed HTML email templates, oversaw social media, and responded to program inquiries.
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>PROGRAM COORDINATOR</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Roctopus Pro Center, Thailand, Jun - Sep 2018</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>
+                                Reorganized and oversaw a SCUBA professional training program.
+                            </li>
+                            <li>
+                                Developed a training schedule to maximize opportunities for trainees while
+                                minimizing redundant work for limited staff.
+                            </li>
+                            <li>
+                                Created Google Sheet and Google
+                                Script based program management tools to track student training progress easily.
+                            </li>
+                            <li>
+                                Updated design and content of the website using WordPress and Google Analytics.
+                            </li>
+                            <li>
+                                Developed email templates using HTML and CSS.
+                            </li>
+                            <li>
+                                Oversaw social media and responded to program inquiries.
+                            </li>
+                        </ul>
 
-                        </p>
                     </div>
                     <div class="job">
-                        <h2>INSTRUCTOR</h2>
-                        <h3>Sairee Cottage Diving, Koh Tao, Thailand, 2013 - 2018</h3>
-                        <p>
-                            Worked as a head SCUBA diving instructor at a well regarded dive shop in one of the busiest
-                            diving locations in the world. As a head instructor I was responsible for teaching courses
-                            of all levels, from introductory experiences to courses for aspiring professionals. My
-                            responsibilities included organizing diving trips and mentoring interns while ensuring the
-                            safety of all of my divers.
-                        </p>
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>SCUBA INSTRUCTOR</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>Sairee Cottage Diving, Thailand, Nov 2013 - Jan 2018</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>
+                                Worked as a head SCUBA instructor at a SCUBA resort in one of the
+                                busiest diving destinations in the world.</li>
+                            <li>
+                                Taught students of all levels, from introductory experiences to courses for aspiring
+                                professionals.
+                            </li>
+                            <li>Received 5 student-elected PADI recognition awards for my teaching.</li>
+                            <li>Organized SCUBA trips and mentored interns while teaching courses.</li>
+                        </ul>
                     </div>
                     <div class="job">
-                        <h2>STAFF RESEARCH ASSOCIATE</h2>
-                        <h3>Univeristy of California, San Diego, 2010 - 2012</h3>
-                        <p>
-                            Worked with the Research on Aging and Development Lab and the Swartz Center for
-                            Computational Neuroscience. My responsibilities included collecting neurobehavioral measures
-                            (i.e. electroencephalography, eye tracking, body motion capture, and behavioral tests) from
-                            typical and clinical populations, analyzing data using specialized software, and developing
-                            protocols and Python scripts to test the accuracy of data stream integration from various
-                            data
-                            sources with varying sampling rates.
-                        </p>
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>STAFF RESEARCH ASSOCIATE</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>UC San Diego, Sep 2010 - Aug 2012</h3>
+                            </li>
+                        </ul>
+                        <ul class="points">
+                            <li>
+                                Worked with the Research on Aging and Development Lab and the Swartz Center for
+                                Computational Neuroscience.
+                            </li>
+                            <li>
+                                Collected neurobehavioral measures
+                                (i.e. electroencephalography, eye tracking, body-motion capture, and behavioral tests)
+                                from typical and clinical populations.</li>
+                            <li>Analyzed data using specialized software.</li>
+                            <li> Developed protocols and Python scripts to test the accuracy of datastream integration
+                                from data sources with varying sampling rates.</li>
+                        </ul>
                     </div>
                     <div class="job" style="display:none">
-                        <h2>NEUROPSYCHOLOGICAL EXAMINER</h2>
-                        <h3>Univeristy of California, Irvine, 2008 - 2010</h3>
-                        <p>
-                            Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals over
-                            90 years old. My responsibilities included performing in-person neuropsychological
-                            examinations on participants, organizing and administering out-of-state participant
-                            examinations, auditing peer data, participating in post-mortem case conferencing, and
-                            modernizing data collection methods and database integration.
-                        </p>
+                        <ul class="horizontals">
+                            <li class="horizontal">
+                                <h2>NEUROPSYCHOLOGICAL EXAMINER</h2>
+                            </li>
+                            <li class="horizontal">
+                                <h3>UC Irvine, Oct 2008 - Mar 2010
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals
+                                over 90 years old.
+                            </li>
+                            <li>
+                                Performed in-person neuropsychological examinations on participants.
+                            </li>
+                            <li>
+                                Organized and administered out-of-state participant examinations.
+                            </li>
+                            <li>
+                                Audited peer data and participated in post-mortem case conferencing,
+                            </li>
+                            <li>
+                                Modernizing data collection methods and database integration.
+                            </li>
+                        </ul>
                     </div>
-                    <span style="font-weight:bold"><i>Additional experience available upon request.</i></span>
-                    <hr class="full-screen">
+                </div>
+
+                <!--<h1>EXPERIENCE</h1>
+                <div class="job">
+                    <h2>SOFTWARE DEVELOPER</h2>
+                    <h3>Self Employed, 2017 - Present</h3>
+                    <p>
+                        Developed business management software for SCUBA diving centers using MS Access, VBA, SQL,
+                        ASP.NET, C#, VB.NET, and Javascript . I streamlined the customer registration process
+                        through a
+                        registration form accessible by media device and simplified business activities such as
+                        course registrations, product purchases, and employee pay sheets by consolidating them into
+                        one user-friendly data management system. I am currently working on converting our student
+                        management tools into a web app for SCUBA instructors and dive centers.
+                    </p>
+                </div>
+                <div class="job">
+                    <h2>PROGRAM COORDINATOR</h2>
+                    <h3>Roctopus Pro Center, Koh Tao, Thailand, 2018</h3>
+                    <p>
+                        Reorganized and oversaw a SCUBA diving professional training program. During my time with
+                        Roctopus Pro, I developed a training schedule to maximize opportunities for trainees while
+                        minimizing redundant work for the limited staff. I also developed Google Sheet and Google
+                        Script based
+                        program management tools to track training progress easily, revamped the out-dated website,
+                        developed HTML email templates, oversaw social media, and responded to program inquiries.
+
+                    </p>
+                </div>
+                <div class="job">
+                    <h2>INSTRUCTOR</h2>
+                    <h3>Sairee Cottage Diving, Koh Tao, Thailand, 2013 - 2018</h3>
+                    <p>
+                        Worked as a head SCUBA diving instructor at a well regarded dive shop in one of the busiest
+                        diving locations in the world. As a head instructor I was responsible for teaching courses
+                        of all levels, from introductory experiences to courses for aspiring professionals. My
+                        responsibilities included organizing diving trips and mentoring interns while ensuring the
+                        safety of all of my divers.
+                    </p>
+                </div>
+                <div class="job">
+                    <h2>STAFF RESEARCH ASSOCIATE</h2>
+                    <h3>Univeristy of California, San Diego, 2010 - 2012</h3>
+                    <p>
+                        Worked with the Research on Aging and Development Lab and the Swartz Center for
+                        Computational Neuroscience. My responsibilities included collecting neurobehavioral measures
+                        (i.e. electroencephalography, eye tracking, body motion capture, and behavioral tests) from
+                        typical and clinical populations, analyzing data using specialized software, and developing
+                        protocols and Python scripts to test the accuracy of data stream integration from various
+                        data
+                        sources with varying sampling rates.
+                    </p>
+                </div>
+                <div class="job" style="display:none">
+                    <h2>NEUROPSYCHOLOGICAL EXAMINER</h2>
+                    <h3>Univeristy of California, Irvine, 2008 - 2010</h3>
+                    <p>
+                        Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals over
+                        90 years old. My responsibilities included performing in-person neuropsychological
+                        examinations on participants, organizing and administering out-of-state participant
+                        examinations, auditing peer data, participating in post-mortem case conferencing, and
+                        modernizing data collection methods and database integration.
+                    </p>
+                </div>-->
             </article>
         </div>
     </div>
