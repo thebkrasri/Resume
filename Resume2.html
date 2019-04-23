@@ -26,7 +26,7 @@
             display: grid;
             grid-template-rows: auto;
             /* height limitation on second row */
-            grid-template-columns: 30% auto;
+            grid-template-columns: 25% auto;
             grid-template-areas: "header header"
                 "sidebar content";
         }
@@ -304,24 +304,51 @@
 
         }
 
-        .btn {
-            background-color: white;
-            border: none;
-            color: dodgerblue;
-            padding: 8px 20px;
-            cursor: pointer;
-            font-size: 30px;
-            float: right;
-            position: fixed;
-            margin-bottom: 0;
-            margin-right: 0;
+        .btnDL {
+            overflow: hidden;
+            list-style: none;
+            white-space: nowrap;
+            margin-right: 15px;
+            margin-top: 15px;
+            border-radius: 25px;
+            display: inline-block;
             top: 0;
             right: 0;
+            position: fixed;
         }
 
-        /* Darker background on mouse-over */
-        .btn:hover {
+        .btnDL a b {
+            opacity: 0;
+            max-width: 0;
+            display: inline-block;
+            text-decoration: none;
+            transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color;
+        }
+
+        .btnDL a:hover {
             color: RoyalBlue;
+        }
+
+        .btnDL a b {
+            float: right;
+            display: block;
+            padding-right: 1em;
+            font-size: 10pt;
+        }
+
+        .btnDL a i {
+            line-height: 1;
+            font-size: 30px;
+            display: inline-block;
+            padding: .125em .375em;
+            color: blue;
+            text-shadow: 2px 2px 2px black;
+        }
+
+        .btnDL:hover a b {
+            opacity: 1;
+            max-width: 200px;
+            transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
         }
     </style>
 
@@ -515,7 +542,8 @@
                                 customer data directly to dive agency web-servers from the business
                                 management system using VBA and WinHTTP requests.
                             </li>
-                            <li class="disc">Developed Batch and PowerShell scripts to automate the data management software
+                            <li class="disc">Developed Batch and PowerShell scripts to automate the data management
+                                software
                                 installation and configuration.</li>
                             <li class="disc">
                                 Built a web-app for SCUBA instructors and SCUBA centers using ASP.NET, .NET Framework,
@@ -569,48 +597,51 @@
                         <h2>STAFF RESEARCH ASSOCIATE</h2>
                         <h3>Univeristy of California, San Diego, Sep 2010 - Aug 2012</h3>
                         <ul class="discs">
-                                <li class="disc">
-                                    Worked with the Research on Aging and Development Lab and the Swartz Center for
-                                    Computational Neuroscience.
-                                </li>
-                                <li class="disc">
-                                    Collected neurobehavioral measures
-                                    (i.e. electroencephalography, eye tracking, body-motion capture, and behavioral tests)
-                                    from typical and clinical populations.</li>
-                                <li class="disc">Analyzed data using specialized software.</li>
-                                <li class="disc"> Developed protocols and Python scripts to test the accuracy of datastream integration
-                                    from data sources with varying sampling rates.</li>
-                            </ul>
+                            <li class="disc">
+                                Worked with the Research on Aging and Development Lab and the Swartz Center for
+                                Computational Neuroscience.
+                            </li>
+                            <li class="disc">
+                                Collected neurobehavioral measures
+                                (i.e. electroencephalography, eye tracking, body-motion capture, and behavioral tests)
+                                from typical and clinical populations.</li>
+                            <li class="disc">Analyzed data using specialized software.</li>
+                            <li class="disc"> Developed protocols and Python scripts to test the accuracy of datastream
+                                integration
+                                from data sources with varying sampling rates.</li>
+                        </ul>
                     </div>
                     <div class="job">
                         <h2>NEUROPSYCHOLOGICAL EXAMINER</h2>
                         <h3>Univeristy of California, Irvine, Oct 2008 - Mar 2010</h3>
                         <ul class="discs">
-                                <li class="disc">
-                                    Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals
-                                    over 90 years old.
-                                </li>
-                                <li class="disc">
-                                    Performed in-person neuropsychological examinations on participants.
-                                </li>
-                                <li class="disc">
-                                    Organized and administered out-of-state participant examinations.
-                                </li>
-                                <li class="disc">
-                                    Audited peer data and participated in post-mortem case conferencing,
-                                </li>
-                                <li class="disc">
-                                    Modernizing data collection methods and database integration.
-                                </li>
-                            </ul>
+                            <li class="disc">
+                                Worked with The 90+ Study collecting neuropsychological data on a cohort of individuals
+                                over 90 years old.
+                            </li>
+                            <li class="disc">
+                                Performed in-person neuropsychological examinations on participants.
+                            </li>
+                            <li class="disc">
+                                Organized and administered out-of-state participant examinations.
+                            </li>
+                            <li class="disc">
+                                Audited peer data and participated in post-mortem case conferencing,
+                            </li>
+                            <li class="disc">
+                                Modernizing data collection methods and database integration.
+                            </li>
+                        </ul>
                     </div>
                     <span style="font-weight:bold"><i>Additional experience available upon request.</i></span>
 
                     <hr class="full-screen">
             </article>
-            <a href="AGuerra.Resume.pdf" download="AGuerra.Resume.pdf" class="btn">
+            <span class="btnDL"><a href="AGuerra.Resume.pdf" download="AGuerra.Resume.pdf"
+                    class="btn" title="Download Resume">
                     <i class="fa fa-download"></i>
-                </a>
+                    <b>Download Resume</b>
+                </a></span>
         </div>
     </div>
 
