@@ -46,6 +46,7 @@
             border-bottom-color: black;
             border-bottom-style: solid;
             border-bottom-width: medium;
+            height: fit-content;
         }
 
         .name {
@@ -53,7 +54,6 @@
             font-weight: semi-bold;
             letter-spacing: 3px;
             display: block;
-
             margin: 0;
         }
 
@@ -264,8 +264,9 @@
         @media only screen and (max-width: 900px) {
 
             .page {
-                grid-template-rows: 20vw calc(77vh - 20vw);
+                grid-template-rows: auto auto;
                 /* height limitation on second row */
+                grid-template-columns: 30% auto;
             }
 
             .name {
@@ -274,6 +275,7 @@
 
             .contact {
                 display: block;
+                padding: 10px;
             }
 
             .email,
@@ -283,7 +285,7 @@
             }
 
             .text {
-                font-size: 2vw;
+                font-size: 12pt;
             }
 
             img {
@@ -294,12 +296,17 @@
                 width: 6vw;
                 height: auto;
             }
+
+            .content {
+                position: relative;
+                display: block;
+            }
         }
 
         @media only screen and (max-width: 700px) {
             .page {
                 display: grid;
-                grid-template-rows: 20vw auto;
+                grid-template-rows: auto auto;
                 grid-template-columns: auto;
                 grid-template-areas: "header"
                     "content"
@@ -314,7 +321,7 @@
             }
 
             .header {
-                height: 100px;
+                height: fit-content;
             }
 
             .content {
@@ -338,7 +345,7 @@
             }
 
             .text {
-                font-size: 3vw;
+                font-size: 12pt;
             }
 
             img {
@@ -354,7 +361,9 @@
             }
 
             .btnDL {
-                margin: 5px 0;
+                margin: 10px;
+                bottom: 0;
+                top: unset;
             }
 
             .btnDL a i {
