@@ -214,96 +214,6 @@
             content: none;
         }
 
-        @media only screen and (max-width: 900px) {
-
-            .page {
-                grid-template-rows: 17vw calc(77vh - 17vw);
-                /* height limitation on second row */
-            }
-
-            .name {
-                display: block;
-            }
-
-            .contact {
-                display: block;
-            }
-
-            .email,
-            .phone {
-                display: inline-block;
-                text-align: center;
-            }
-
-            .text {
-                font-size: 2vw;
-            }
-
-            img {
-                width: 4vw;
-            }
-
-            .li-icon {
-                width: 6vw;
-                height: auto;
-            }
-        }
-
-        @media only screen and (max-width: 700px) {
-            .page {
-                display: grid;
-                grid-template-rows: 20vw auto auto;
-                grid-template-columns: 30% auto;
-                grid-template-areas: "header header"
-                    "content content"
-                    "sidebar sidebar";
-            }
-
-            .sidebar {
-                display: block;
-                border: none;
-            }
-
-            .header {
-                height: 100px;
-            }
-
-            .content {
-                margin-top: 15px;
-            }
-
-            .profile {
-                padding: 0px;
-            }
-
-            .full-screen {
-                display: block;
-            }
-
-            article {
-                height: auto;
-                padding-bottom: 0;
-                margin-bottom: 0;
-            }
-
-            .text {
-                font-size: 3vw;
-            }
-
-            img {
-                width: 5vw;
-            }
-
-            .job {
-                padding-left: 0;
-            }
-
-            h1 {
-                text-align: center;
-            }
-
-        }
-
         .btnDL {
             overflow: hidden;
             list-style: none;
@@ -349,6 +259,111 @@
             opacity: 1;
             max-width: 200px;
             transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
+        }
+
+        @media only screen and (max-width: 900px) {
+
+            .page {
+                grid-template-rows: 20vw calc(77vh - 20vw);
+                /* height limitation on second row */
+            }
+
+            .name {
+                display: block;
+            }
+
+            .contact {
+                display: block;
+            }
+
+            .email,
+            .phone {
+                display: inline-block;
+                text-align: center;
+            }
+
+            .text {
+                font-size: 2vw;
+            }
+
+            img {
+                width: 4vw;
+            }
+
+            .li-icon {
+                width: 6vw;
+                height: auto;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .page {
+                display: grid;
+                grid-template-rows: 20vw auto;
+                grid-template-columns: auto;
+                grid-template-areas: "header"
+                    "content"
+                    "sidebar";
+            }
+
+            .sidebar {
+                margin-top: 0;
+                display: block;
+                border: none;
+                height: 100%;
+            }
+
+            .header {
+                height: 100px;
+            }
+
+            .content {
+                margin-top: 15px;
+                display: block;
+                height: 100%;
+            }
+
+            .profile {
+                padding: 0px;
+            }
+
+            .full-screen {
+                display: block;
+            }
+
+            article {
+                height: auto;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+
+            .text {
+                font-size: 3vw;
+            }
+
+            img {
+                width: 5vw;
+            }
+
+            .job {
+                padding-left: 0;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            .btnDL {
+                margin: 5px 0;
+            }
+
+            .btnDL a i {
+                padding: .125em;
+            }
+            .btnDL:hover a b {
+            max-width: 0;
+            opacity: 0;
+            }
         }
     </style>
 
@@ -637,8 +652,8 @@
 
                     <hr class="full-screen">
             </article>
-            <span class="btnDL"><a href="AGuerra.Resume.pdf" download="AGuerra.Resume.pdf"
-                    class="btn" title="Download Resume">
+            <span class="btnDL"><a href="AGuerra.Resume.pdf" download="AGuerra.Resume.pdf" class="btn"
+                    title="Download Resume">
                     <i class="fa fa-download"></i>
                     <b>Download Resume</b>
                 </a></span>
